@@ -1,7 +1,10 @@
 import logo from "../assets/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBars,
+  faMagnifyingGlass,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
@@ -12,12 +15,10 @@ const StyledHeader = styled.header`
   display: flex;
   height: 56px;
   justify-content: space-between;
-
   * {
     display: flex;
     align-items: center;
   }
-
   .header-start {
     margin: 10px;
     svg {
@@ -33,7 +34,6 @@ const StyledHeader = styled.header`
       }
     }
   }
-
   .header-center {
     flex: 1;
     justify-content: flex-end;
@@ -47,7 +47,6 @@ const StyledHeader = styled.header`
       font-size: 20px;
     }
   }
-
   .header-end {
     margin: 20px;
     button {
@@ -62,7 +61,6 @@ const StyledHeader = styled.header`
       }
     }
   }
-
   @media screen and (min-width: 600px) {
     .header-center {
       justify-content: center;
@@ -88,29 +86,29 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-    return (
-        <StyledHeader>
-            <div className="header-start">
-                <FontAwesomeIcon icon={faBars}/>
-                <a href="#">
-                    <img src={logo} style={{ width: 100, height: 100}}/>
-                </a>
-            </div>
-
-            <div className="header-center">
-                <input type="search" name="search" id="search" placeholder="검색"/>
-                <button>
-                    <FontAwesomeIcon icon={faMagnifyingGlass}/>
-                </button>
-            </div>
-
-            <div className="header-end">
-                <button>
-                    <FontAwesomeIcon icon={faUser}/>
-                    <span>로그인</span>
-                </button>
-            </div>
-        </StyledHeader>
-    );
+  return (
+    <StyledHeader>
+      <div className="header-start">
+        <FontAwesomeIcon icon={faBars} />
+        <a href="#">
+          <img src={logo} style={{ width: 100, height: 100 }} />
+        </a>
+      </div>
+      
+      <div className="header-center">
+        <input type="search" name="search" id="search" placeholder="검색" />
+        <button>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
+      </div>
+      
+      <div className="header-end">
+        <button>
+          <FontAwesomeIcon icon={faUser} />
+          <span>로그인</span>
+        </button>
+      </div>
+    </StyledHeader>
+  );
 };
 export default Header;
