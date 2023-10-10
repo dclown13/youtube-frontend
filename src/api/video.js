@@ -17,8 +17,8 @@ export const addVideo = async (data) => {
 };
 
 export const getVideos = async (page, category) => {
-    let url =`video?page=${page}`;
-    if(category!==null) {
+    let url = `video?page=${page}`;
+    if (category !== null) {
         url += `&category=${category}`;
     }
     return await instance.get(url);
