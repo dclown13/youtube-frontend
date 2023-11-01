@@ -4,18 +4,11 @@ import { RouterProvider } from "react-router-dom";
 import Router from "./router";
 import "./assets/reset.css";
 import { Provider } from "react-redux";
-import rootReducer, { rootSaga } from "./store";
-import { legacy_createStore as createStore, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
-
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-
-sagaMiddleware.run(rootSaga);
+import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Provider store={store}>
-        <RouterProvider router={Router} />
-    </Provider>
+  <Provider store={store}>
+    <RouterProvider router={Router} />
+  </Provider>
 );
